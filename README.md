@@ -8,15 +8,17 @@ OCI documentation — with no hallucination and no off-topic responses.
 
 ## Architecture
 
+```
 User Question
-↓
+      ↓
 Guardrail (two-stage classifier)
-↓ NO ↓ YES
-Polite refusal Retriever (ChromaDB similarity search)
-↓
-Generator (LLM + context + citations)
-↓
-Answer + Source Citations
+      ↓ NO                    ↓ YES
+Polite refusal          Retriever (ChromaDB)
+                               ↓
+                        Generator (LLM + context)
+                               ↓
+                        Answer + Citations
+```
 
 Six components, each with one job:
 
@@ -38,7 +40,7 @@ Six components, each with one job:
 | ChromaDB                                 | Vector store                  | Simple, local, persists to disk                        |
 | LangChain                                | Document loading and chunking | Handles PDF parsing and RecursiveCharacterTextSplitter |
 | pypdf                                    | PDF text extraction           | Lightweight, no external dependencies                  |
-| RAGAS                                    | RAG assessment                | gives you an estimate about your RAG                   |
+| RAGAS                                    | RAG assessment                | Evaluation framework measures faithfulness, answer relevancy, context precision and recall                   |
 
 ---
 
