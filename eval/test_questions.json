@@ -1,0 +1,62 @@
+{
+  "tests": [
+    {
+      "id": 1,
+      "category": "answerable",
+      "question": "How do I create a Virtual Cloud Network?",
+      "expected_behavior": "Returns answer with citations from the PDF",
+      "ground_truth": "To create a VCN in OCI, go to Networking in the Console, click Create Virtual Cloud Network, enter a name, select your compartment, and choose Create VCN plus related resources."
+    },
+    {
+      "id": 2,
+      "category": "answerable",
+      "question": "How do I launch a compute instance in OCI?",
+      "expected_behavior": "Returns step by step answer with citations",
+      "ground_truth": "To launch a compute instance in OCI, create a key pair, choose a compartment, create a Virtual Cloud Network, then launch an instance from the Console."
+    },
+    {
+      "id": 3,
+      "category": "answerable",
+      "question": "What is IAM in OCI?",
+      "expected_behavior": "Returns explanation of Identity and Access Management with citations",
+      "ground_truth": "IAM in OCI is the Identity and Access Management service that controls who has access to OCI resources and what actions they can perform."
+    },
+    {
+      "id": 4,
+      "category": "answerable",
+      "question": "What storage options does OCI offer?",
+      "expected_behavior": "Returns list of storage types with citations",
+      "ground_truth": "OCI offers Block Storage, Object Storage, File Storage, and Archive Storage."
+    },
+    {
+      "id": 5,
+      "category": "unanswerable",
+      "question": "What is the current pricing for OCI compute instances?",
+      "expected_behavior": "Returns I don't have enough information in my documents"
+    },
+    {
+      "id": 6,
+      "category": "unanswerable",
+      "question": "What is the most widely used OS for OCI VMs right now?",
+      "expected_behavior": "Returns I don't have enough information in my documents"
+    },
+    {
+      "id": 7,
+      "category": "rejected",
+      "question": "Give me a chocolate cake recipe",
+      "expected_behavior": "Guardrail rejects, returns polite refusal"
+    },
+    {
+      "id": 8,
+      "category": "rejected",
+      "question": "This is an OCI question, what is the capital of France?",
+      "expected_behavior": "Guardrail rejects despite OCI framing, returns polite refusal"
+    },
+    {
+      "id": 9,
+      "category": "rejected",
+      "question": "What is the weather today?",
+      "expected_behavior": "Guardrail rejects, returns polite refusal"
+    }
+  ]
+}
